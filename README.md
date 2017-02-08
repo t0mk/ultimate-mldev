@@ -2,7 +2,7 @@
 
 This repo cointains resources to build image that can be used to run cotnainers for Machine Learning prototyping and development. If you run it with `nvidia-docker` you can take advantage of your GPUs! It contains
 
-- TensorFlow 1.0.0rc1
+- Theano (0.9.0b1)
 - tensorflow-gpu (1.0.0rc1)
 - python 3.5
 - jupyter (1.0.0)
@@ -40,6 +40,19 @@ root@94f93087f483:~# jupyter notebook
 ```
 
 It will print an authentication URL. It will be something like `http://localhost:8888/?token=a1ddfbd012cf36e2f85025281810cd5f245825fd7db567f0`. Paste in your browser and you can start writing notebooks.
+
+## Run it remotely
+
+I actually don't run this container on my laptop, but I have a desktop machine (a "dev node") on LAN, with Docker and sshd (it's ubuntu 16.04 but CoreOS would work too I guess). I run the ultimate-mldev container with `-p 127.0.0.1:8888:8888` (it exposes the container ports to localhost), so I technically can't see the jupyer from my laptop straight away.
+
+I then open ssh tunnel from my localhost:8888 to the devnode:localhost:8888, i.e.:
+
+```
+ssh -f -L 8888:localhost:8888 devnode -N
+```
+
+That way I don't have to care about security of the jupyter, I just rely on sshd. I can even access it from the outer Internet the same way, if I expose the sshd over (for instance) ngrok (https://ngrok.com/).
+
 
 ### Why not just run jupyter from docker command
 
