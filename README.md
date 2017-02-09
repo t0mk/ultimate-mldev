@@ -2,12 +2,12 @@
 
 This repo cointains resources to build image that can be used to run cotnainers for Machine Learning prototyping and development. If you run it with `nvidia-docker` you can take advantage of your GPUs! It contains
 
-- Theano (0.9.0b1)
+- https://github.com/Theano/Theanoo (0.9.0b1)
 - tensorflow-gpu (1.0.0rc1)
 - python 3.5
 - jupyter (1.0.0)
-- Keras (1.2.1)
-- edward (1.2.1)
+- https://github.com/fchollet/keras (1.2.1)
+- https://github.com/blei-lab/edward (1.2.1)
 
 ## Get it or build it
 
@@ -39,7 +39,9 @@ And then in the container:
 root@94f93087f483:~# jupyter notebook
 ```
 
-It will print an authentication URL. It will be something like `http://localhost:8888/?token=a1ddfbd012cf36e2f85025281810cd5f245825fd7db567f0`. Paste in your browser and you can start writing notebooks.
+It will print an authentication URL. It will be something like `http://localhost:8888/?token=a1ddfbd012cf36e2f85025281810cd5f245825fd7db567f0`. Paste in your browser and you can start writing notebooks at http://localhost:8888/tree?.
+
+
 
 ## Run it remotely
 
